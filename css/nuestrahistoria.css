@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: "Murecho", sans-serif;
+  background-color: #fff9f4;
+  color: #333;
+  line-height: 1.6;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../Imagenes/Taza\ granos\ cafe.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ====== HEADER GENERAL ====== */
+.header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====== MENÚ DE NAVEGACIÓN ====== */
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar ul li a {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.navbar ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: #ce967b;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.navbar ul li a:hover::before,
+.navbar ul li a.active::before {
+  width: 80%;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #ce967b;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo:hover {
+  color: #ce967b;
+}
+
+/* ====== ÍCONO MENÚ HAMBURGUESA ====== */
+.menu-icono {
+  width: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+#menu {
+  display: none;
+}
+
+/* ====== MENÚ RESPONSIVO ====== */
+@media (max-width: 768px) {
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    flex-direction: column;
+  }
+
+  #menu:checked + label + .navbar {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul li a {
+    padding: 1rem;
+    display: block;
+  }
+
+  .menu-icono {
+    display: block;
+  }
+}
+
+/* ====== HEADER CONTENIDO ====== */
+.historia-header {
+  text-align: center;
+  animation: fadeInUp 1s ease-out forwards;
+  margin-top: 10rem;
+}
+
+.historia-header h1 {
+  font-size: 65px;
+  line-height: 80px;
+  color: #fcfcf9;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.historia-header p {
+  font-size: 16px;
+  color: #C5C5C5;
+  padding: 0 250px;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .historia-header h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .historia-header p {
+    padding: 0 30px;
+  }
+}
+
+/* ====== SECCIÓN CAFÉ ====== */
+.coffe-group {
+  padding: 5rem;
+  width: 700px;
+  max-width: 90%;
+  text-align: center;
+  margin: 5rem auto;
+}
+
+/* Tarjetas */
+.experiencia, .mas-cafe, .filosofia, .compromiso {
+  background-color: #533b2f;
+  padding: 1.5rem;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  animation: fadeInUp 1s ease-out forwards;
+  color: #fff9f4;
+  margin: 2rem auto;
+}
+
+.experiencia h2,
+.mas-cafe h2,
+.filosofia h2,
+.compromiso h2{
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive tarjetas */
+@media (max-width: 768px) {
+  .coffe-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mas-cafe {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .compromiso {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .filosofia {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+
+/* ====== ANIMACIONES ====== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  background-color: #4e372c;
+  color: #fff;
+  padding: 2rem 1rem 1rem;
+  font-family: "Murecho", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.footer-logo h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.footer-logo h2 span {
+  color: #CE967B;
+}
+
+.footer-logo p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.footer-social p {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-icons a {
+  background-color: #4e372c;
+  color: white;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #CE967B;
+  color: #4e372c;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.footer-legal {
+  margin-top: 1rem;
+}
+
+.footer-legal a {
+  color: #CE967B;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: #a45d3f;
+}
